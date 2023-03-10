@@ -21,12 +21,12 @@ const biciclette = [
 
     {
         nome: 'mtb',
-        peso: 10
+        peso: 13
     },
 
     {
         nome: 'elettrica',
-        peso: 18
+        peso: 11
     },
 
     {
@@ -41,7 +41,7 @@ for (let i = 0; i < biciclette.length; i++) {
 
     pesoBicicletta = biciclette[0].peso;
 
-    if (biciclette[i].peso < pesoBicicletta) {
+    if (biciclette[i].peso <= pesoBicicletta) {
         biciPiuLeggera = biciclette[i];
     }
 }
