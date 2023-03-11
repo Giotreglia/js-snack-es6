@@ -16,17 +16,17 @@ const containerDom = document.getElementById('container');
 const biciclette = [
     {
         nome: 'gravel',
-        peso: 12
+        peso: 9
     },
 
     {
         nome: 'mtb',
-        peso: 13
+        peso: 20
     },
 
     {
         nome: 'elettrica',
-        peso: 11
+        peso: 10
     },
 
     {
@@ -35,16 +35,18 @@ const biciclette = [
     }
 ];
 
-let biciPiuLeggera;
+let biciPiuLeggera = biciclette[0];
 
 for (let i = 0; i < biciclette.length; i++) {
 
-    pesoBicicletta = biciclette[0].peso;
-
-    if (biciclette[i].peso <= pesoBicicletta) {
+    if (biciclette[i].peso < biciPiuLeggera.peso) {
         biciPiuLeggera = biciclette[i];
     }
 }
+
+// Ricavo il nome e il peso con destructuring
+
+const {nome, peso} = biciPiuLeggera;
 
 containerDom.innerHTML = `<h1>La bicicletta più leggera è la ${biciPiuLeggera.nome} con un peso di ${biciPiuLeggera.peso} kg.</h1>`;
 
